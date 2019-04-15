@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import {Product} from '../../models/product.model';
+import {TransactionService} from '../../services/transaction.service';
+import {timer} from 'rxjs';
 
 
 @Component({
@@ -9,20 +11,27 @@ import {Product} from '../../models/product.model';
   styleUrls: ['./purchase-form.component.scss']
 })
 export class PurchaseFormComponent implements OnInit {
-  formProd: Product = {} as Product;
+  formProd: Product = <Product>{};
+  products: Product[] = [];
 
-  constructor() { }
+  constructor(private transactionService: TransactionService) { }
 
   ngOnInit() {
-    // this.userForm = this.formBuilder.group({
-    //   firstName: [''],
-    //   lastName: [''],
-    //   email: [''],
-    //   password: [''],
-    // });
   }
 
-  makeTransaction(myform) {
-    console.log('hej');
+  addProduct() {
+    this.products.push(JSON.parse(JSON.stringify(this.formProd)));
+  }
+
+  makeTransaction() {
+    console.log(this.formProd);
+    const date = new Date();
+    const transaction = {
+      items : this.products,
+      transactionDate : date.toJSON()
+    }
+    this.transactionService
+      .save(transaction)
+      .subscribe(x => x);
   }
 }

@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
-import {ServiceBase} from './servicebase';
-import {Observable} from 'rxjs';
-import {Product} from '../models/product.model';
+import { Observable } from 'rxjs';
+import { ServiceBase } from './servicebase';
+import { Product } from 'src/models/product.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class ProductService {
-
+export class TransactionService {
   constructor(private api: ServiceBase) { }
 
   public getAll(): Observable<Product[]> {
@@ -16,6 +15,6 @@ export class ProductService {
 
   public save(object: object): Observable<any> {
     console.log(object);
-    return this.api.post('/product', object);
+    return this.api.post('/transaction', object);
   }
 }

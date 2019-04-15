@@ -1,18 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PurchaseFormComponent } from './purchase-form/purchase-form.component';
+import { SellingFormComponent } from './selling-form/selling-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PurchaseFormComponent
+    PurchaseFormComponent,
+    SellingFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
