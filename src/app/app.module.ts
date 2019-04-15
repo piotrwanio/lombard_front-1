@@ -3,12 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { SellingFormComponent } from './selling-form/selling-form.component';
+import { PurchaseFormComponent } from './purchase-form/purchase-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SellingFormComponent
+    SellingFormComponent,
+    PurchaseFormComponent
   ],
   imports: [
     BrowserModule,
