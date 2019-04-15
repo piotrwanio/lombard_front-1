@@ -1,0 +1,57 @@
+<h2>Sprzedaż przedmiotu</h2>
+
+Wybierz przedmiot z magazynu:
+<select class="form-control" style="width: 200px; margin: auto" [(ngModel)]="formProd">
+  <option name="formProd" ngDefaultControl *ngFor="let product of products" [ngValue]="product">{{product.name}}
+  </option>
+</select>
+
+<div class="row" style="margin-top: 20px">
+  Nazwa przedmiotu :
+  <div class="form-group col-4 col-md-2">
+  <input class="form-control" type="text" value="{{formProd.name}}" readonly>
+  </div>
+  Ilość :
+  <div class="form-group col-4 col-md-2">
+  <input class="form-control" type="text" value="{{formProd.quantity}}" readonly>
+  </div>
+</div>
+<div class="row" style="margin-top: 20px">
+  Jednostka :
+  <div class="form-group col-4 col-md-2">
+  <input class="form-control" type="text" value="{{formProd.unit}}" readonly>
+  </div>
+  Cena zakupu przedmiotu :
+  <div class="form-group col-4 col-md-2">
+  <input class="form-control" type="text" value="{{formProd.purchasePrice}} zł" readonly>
+  </div>
+</div>
+
+<div class="row" style="margin-top: 10px">
+  <div class="form-group col-4 col-md-2">
+  Sprzedawana ilość:
+  <input class="form-control" style="width: 150px; margin: auto" type="number">
+  </div>
+  <div class="form-group col-4 col-md-2">
+  Aktualna cena:
+  <input class="form-control" style="width: 150px; margin: auto" type="number">
+  </div>
+</div>
+<div>
+  Profit : 333 zł
+</div>
+<button style="display: block; margin: auto; margin-top: 20px" class="btn btn-primary" type="submit" value="Sprzedaj"
+        (click)="makeTransaction()">Sprzedaj
+</button>
+<!--<option *ngFor="let product of products" [ngValue]="product">-->
+<!--{{ product.name }}-->
+<!--</option>-->
+
+<!--<ul class="list-group">-->
+<!--<li *ngFor="let product of products" class="list-group-item">-->
+<!--{{product.name}}-->
+<!--{{product.quantity}}-->
+<!--{{product.unit}}-->
+<!--{{product.price}}-->
+<!--</li>-->
+<!--</ul>-->

@@ -1,13 +1,38 @@
-<form (ngSubmit)="makeTransaction(myform)">
-  <p>
-    Nazwa przedmiotu : <input type="text" name="">
-    Ilość : <input type="text">
-    Jednostka : <input type="text">
-    Cena przedmiotu : <input type="number"]>
-  </p>
+<h2>Zakup przedmiotu</h2>
+<form>
+  <div class="row">
+    Nazwa przedmiotu :
+    <div class="form-group col-4 col-md-2">
+      <input class="form-control" type="text" name="name" [(ngModel)]="formProd.name">
+    </div>
+    Ilość :
+    <div class="form-group col-4 col-md-2">
+      <input class="form-control" type="text" name="quantity" [(ngModel)]="formProd.quantity">
+    </div>
+  </div>
+  <div class="row">
+    Jednostka :
+    <div class="form-group col-4 col-md-2">
+      <input class="form-control" type="text" name="unit" [(ngModel)]="formProd.unit">
+    </div>
+    Cena przedmiotu :
+    <div class="form-group col-4 col-md-2">
+      <input class="form-control" type="number" name="price" [(ngModel)]="formProd.purchasePrice">
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit" value="Dodaj produkt" (click)="addProduct()">Dodaj produkt
+  </button>
+  <button style="display: block; margin: auto; margin-top: 20px" class="btn btn-primary" type="submit" value="Kup" (click)="makeTransaction()">Kup
+  </button>
 
-  <input type="submit" (click)="makeTransaction()">
+  <ul class="list-group">
+    <li *ngFor="let product of products" class="list-group-item">
+      {{product.name}}
+      {{product.quantity}}
+      {{product.unit}}
+      {{product.price}}
+    </li>
+  </ul>
 </form>
-
 
 
