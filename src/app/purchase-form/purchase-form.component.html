@@ -1,9 +1,9 @@
 <form (ngSubmit)="makeTransaction(myform)">
   <p>
-    Nazwa przedmiotu : <input type="text" name="">
+    Nazwa przedmiotu : <input type="text" name="" [(ngModel)]="formProduct.name">
     Ilość : <input type="text">
     Jednostka : <input type="text">
-    Cena przedmiotu : <input type="number"]>
+    Cena przedmiotu : <input type="number">
   </p>
 
   <input type="submit" (click)="makeTransaction()">

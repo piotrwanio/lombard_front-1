@@ -9,9 +9,9 @@ import {Product} from '../../models/product.model';
   styleUrls: ['./purchase-form.component.scss']
 })
 export class PurchaseFormComponent implements OnInit {
-  // formProd: Product
+  formProd: Product = {} as Product;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor() { }
 
   ngOnInit() {
     // this.userForm = this.formBuilder.group({
