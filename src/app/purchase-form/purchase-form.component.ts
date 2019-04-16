@@ -28,6 +28,7 @@ export class PurchaseFormComponent implements OnInit {
     const date = new Date();
     const transaction = {
       items : this.products,
+      transactionType: 'purchase',
       transactionDate : date.toJSON()
     }
     this.transactionService

@@ -7,7 +7,6 @@ import {Product} from '../models/product.model';
   providedIn: 'root'
 })
 export class ProductService {
-
   constructor(private api: ServiceBase) { }
 
   public getAll(): Observable<Product[]> {
