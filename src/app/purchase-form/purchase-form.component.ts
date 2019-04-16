@@ -11,7 +11,7 @@ import {timer} from 'rxjs';
   styleUrls: ['./purchase-form.component.scss']
 })
 export class PurchaseFormComponent implements OnInit {
-  formProd: Product = <Product>{};
+  formProd: Product = {} as Product;
   products: Product[] = [];
 
   constructor(private transactionService: TransactionService) { }
@@ -30,7 +30,7 @@ export class PurchaseFormComponent implements OnInit {
       items : this.products,
       transactionType: 'purchase',
       transactionDate : date.toJSON()
-    }
+    };
     this.transactionService
       .save(transaction)
       .subscribe(x => x);
