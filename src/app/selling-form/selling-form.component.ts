@@ -28,6 +28,7 @@ export class SellingFormComponent implements OnInit {
 
   makeTransaction() {
     const date = new Date();
+    window.alert(date.toJSON());
     const transaction = {
       items : this.products,
       transactionDate : date.toJSON()
