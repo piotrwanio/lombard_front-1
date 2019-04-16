@@ -5,4 +5,6 @@ export interface Report {
   profit: number;
   purchaseTransactions: Transaction[];
   sellingTransactions: Transaction[];
+  missingItems: object;
+  stockState: object;
 }
