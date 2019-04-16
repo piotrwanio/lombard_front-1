@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {TransactionService} from '../../services/transaction.service';
 import {Product} from '../../models/product.model';
 import {ProductService} from '../../services/product.service';
+import {Transaction} from '../../models/transaction.model';
 
 @Component({
   selector: 'app-selling-form',
@@ -9,8 +10,9 @@ import {ProductService} from '../../services/product.service';
   styleUrls: ['./selling-form.component.scss']
 })
 export class SellingFormComponent implements OnInit {
-  formProd: Product = <Product>{};
+  formProd: Product = {} as Product;
   products: Product[] = [];
+  transaction: Transaction = {} as Transaction;
 
   constructor(private  transactionService: TransactionService,
               private  productService: ProductService) { }
@@ -29,12 +31,10 @@ export class SellingFormComponent implements OnInit {
   makeTransaction() {
     const date = new Date();
     window.alert(date.toJSON());
-    const transaction = {
-      items : this.products,
-      transactionDate : date.toJSON()
-    };
+    this.transaction.items = this.products;
+    this.transaction.transactionDate = date.toJSON();
     this.transactionService
-      .save(transaction)
+      .save(this.transaction)
       .subscribe(x => x);
   }
 

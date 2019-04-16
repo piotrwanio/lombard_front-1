@@ -1,3 +1,16 @@
-<input [matDatepicker]="myDatepicker">
-<mat-datepicker-toggle [for]="myDatepicker"></mat-datepicker-toggle>
-<mat-datepicker #myDatepicker></mat-datepicker>
+<div>
+  Data startowa:
+  <input [matDatepicker]="fromDate">
+  <mat-datepicker-toggle [for]="fromDate"></mat-datepicker-toggle>
+  <mat-datepicker #fromDate></mat-datepicker>
+</div>
+<div>
+  Data końcowa:
+  <input [matDatepicker]="toDate">
+  <mat-datepicker-toggle [for]="toDate"></mat-datepicker-toggle>
+  <mat-datepicker #toDate></mat-datepicker>
+</div>
+
+<div>
+  <p>Raport:</p>
+</div>

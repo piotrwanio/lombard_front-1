@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ServiceBase {
   readonly BASE_URL: string = 'http://localhost:62530/api';
+  // headers: HttpHeaders = new HttpHeaders();
 
   config = {
     headers: {
@@ -21,10 +22,10 @@ export class ServiceBase {
     return this.http.get(url);
   }
 
-  public get(relativeUrl: string, httpParams: HttpParams): Observable<any> {
-    const url = this.BASE_URL + relativeUrl;
-    return this.http.get(url, {httpParams});
-  }
+  // public get(relativeUrl: string, httpParams: HttpParams): Observable<any> {
+  //   const url = this.BASE_URL + relativeUrl;
+  //   return this.http.get(url, {params: httpParams});
+  // }
 
   public post(relativeUrl: string, object: any): Observable<any> {
     const url = this.BASE_URL + relativeUrl;
