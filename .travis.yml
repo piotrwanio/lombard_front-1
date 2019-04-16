@@ -9,7 +9,6 @@ branches:
 before_script:
 - npm install -g @angular/cli
 script:
-- cd ./lombard_front/
 - npm install
 - ng lint
 - ng build 
