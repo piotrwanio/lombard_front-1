@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -19,6 +19,11 @@ export class ServiceBase {
   public get(relativeUrl: string): Observable<any> {
     const url = this.BASE_URL + relativeUrl;
     return this.http.get(url);
+  }
+
+  public get(relativeUrl: string, httpParams: HttpParams): Observable<any> {
+    const url = this.BASE_URL + relativeUrl;
+    return this.http.get(url, {httpParams});
   }
 
   public post(relativeUrl: string, object: any): Observable<any> {
